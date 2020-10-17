@@ -1,4 +1,4 @@
-local priv = minetest.settings:get("ts_skins_dummies.priv") or "ban"
+local priv = minetest.settings:get("ts_police.priv") or "ban"
 
 local function is_allowed(player, pos)
 	local name = player:get_player_name()
