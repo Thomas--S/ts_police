@@ -53,12 +53,6 @@ armor:register_armor("ts_police:shield", {
 	armor_groups = {fleshy=15},
 	damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
 	reciprocate_damage = true,
-	on_damage = function(player, index, stack)
-		play_sound_effect(player, "default_wood_footstep")
-	end,
-	on_destroy = function(player, index, stack)
-		play_sound_effect(player, "default_wood_footstep")
-	end,
 })
 
 armor:register_armor("ts_police:helmet", {
