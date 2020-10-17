@@ -216,7 +216,8 @@ minetest.register_tool("ts_police:pepperspray", {
 		})
 		itemstack:add_wear(3000)
 		return itemstack
-	end
+	end,
+	groups = { wieldview_transform = 3 },
 })
 
 minetest.register_craft({
