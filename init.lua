@@ -1,4 +1,5 @@
 local priv = minetest.settings:get("ts_police.priv") or "ban"
+if priv == "" then priv = "ban" end
 
 local function is_allowed(player, pos)
 	local name = player:get_player_name()
@@ -154,9 +155,9 @@ local function truncheon (itemstack, user, pointed_thing, damage)
 			if damage then
 				player:set_hp(player:get_hp() - 5)
 			end
+			itemstack:add_wear(100)
 		end
 	end
-	itemstack:add_wear(100)
 	return itemstack
 end
 
