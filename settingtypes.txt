@@ -1,0 +1,2 @@
+# The priv needed to spawn dummies
+ts_police.priv (Priv for server police) string ban
