@@ -185,6 +185,7 @@ minetest.register_tool("ts_police:pepperspray", {
 		if pointed_thing.type == "object" then
 			local player = pointed_thing.ref
 			if player and player:is_player() and player ~= user then
+				local player_name = player:get_player_name()
 				local p1 = vector.add(user:get_pos(), user:get_eye_offset())
 				p1.y = p1.y + user:get_properties().eye_height
 				local p2 = vector.add(player:get_pos(), player:get_eye_offset())
@@ -193,7 +194,43 @@ minetest.register_tool("ts_police:pepperspray", {
 				local mult = 20 / math.max(math.sqrt(dist), 1)
 				local dir = vector.direction(p1, p2)
 				player:add_player_velocity(vector.multiply(dir, mult))
-				player:set_hp(math.max(player:get_hp() - 1, 3))
+				if stamina and stamina.poison then
+					stamina.poison(player, 3, 1)
+				else
+					player:set_hp(math.max(player:get_hp() - 3, 1))
+				end
+				local hud_def = {
+					hud_elem_type = "image",
+					position = { x = 0.5, y = 0.5},
+					name = "pepperspray_overlay",
+					text = "ts_police_grey.png",
+					alignment = { x = 0, y = 0 },
+					offset = { x = 0, y = 0 },
+					scale = {x = 4000, y = 4000 },
+				}
+				local hud_overlay1 = player:hud_add(hud_def)
+				local hud_overlay2 = player:hud_add(hud_def)
+				local hud_text = player:hud_add({
+					hud_elem_type = "text",
+					position = { x = 0.5, y = 0.25},
+					name = "pepperspray_text",
+					text = "You were exposed to pepperspray. This will reduce your vision temporarily.",
+					alignment = { x = 0, y = 0 },
+					number = 0xFF8800
+				})
+				minetest.after(3, function ()
+					local pplayer = minetest.get_player_by_name(player_name)
+					if pplayer then
+						pplayer:hud_remove(hud_overlay1)
+					end
+				end)
+				minetest.after(4, function ()
+					local pplayer = minetest.get_player_by_name(player_name)
+					if pplayer then
+						pplayer:hud_remove(hud_overlay2)
+						pplayer:hud_remove(hud_text)
+					end
+				end)
 			end
 		end
 		minetest.add_particlespawner({
