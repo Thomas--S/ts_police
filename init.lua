@@ -66,8 +66,8 @@ armor:register_armor("ts_police:helmet", {
 armor:register_armor("ts_police:chestplate", {
 	description = "Server Police Chestplate",
 	inventory_image = "3d_armor_inv_chestplate_steel.png^[multiply:#444444",
-	texture = "(3d_armor_chestplate_steel.png^[multiply:#444444)^3d_armor_trans.png",
-	preview = "(3d_armor_chestplate_steel_preview.png^[multiply:#444444)^3d_armor_trans.png",
+	texture = "ts_police_armor_blank.png^(3d_armor_chestplate_steel.png^[multiply:#444444)^ts_police_armor_blank.png",
+	preview = "ts_police_armor_blank_preview.png^(3d_armor_chestplate_steel_preview.png^[multiply:#444444)^ts_police_armor_blank.png",
 	groups = {armor_torso=1, armor_heal=12, armor_use=200},
 	armor_groups = {fleshy=20},
 	damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
@@ -76,8 +76,8 @@ armor:register_armor("ts_police:chestplate", {
 armor:register_armor("ts_police:leggings", {
 	description = "Server Police Leggings",
 	inventory_image = "3d_armor_inv_leggings_steel.png^[multiply:#444444",
-	texture = "(3d_armor_leggings_steel.png^[multiply:#444444)^3d_armor_trans.png",
-	preview = "(3d_armor_leggings_steel_preview.png^[multiply:#444444)^3d_armor_trans.png",
+	texture = "ts_police_armor_blank.png^(3d_armor_leggings_steel.png^[multiply:#444444)^ts_police_armor_blank.png",
+	preview = "ts_police_armor_blank_preview.png^(3d_armor_leggings_steel_preview.png^[multiply:#444444)^ts_police_armor_blank.png",
 	groups = {armor_legs=1, armor_heal=12, armor_use=200},
 	armor_groups = {fleshy=20},
 	damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
@@ -86,8 +86,8 @@ armor:register_armor("ts_police:leggings", {
 armor:register_armor("ts_police:boots", {
 	description = "Server Police Boots",
 	inventory_image = "3d_armor_inv_boots_steel.png^[multiply:#444444",
-	texture = "(3d_armor_boots_steel.png^[multiply:#444444)^3d_armor_trans.png",
-	preview = "(3d_armor_boots_steel_preview.png^[multiply:#444444)^3d_armor_trans.png",
+	texture = "ts_police_armor_blank.png^(3d_armor_boots_steel.png^[multiply:#444444)^ts_police_armor_blank.png",
+	preview = "ts_police_armor_blank_preview.png^(3d_armor_boots_steel_preview.png^[multiply:#444444)^ts_police_armor_blank.png",
 	groups = {armor_feet=1, armor_heal=12, armor_use=200},
 	armor_groups = {fleshy=15},
 	damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
