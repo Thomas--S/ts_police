@@ -268,6 +268,15 @@ minetest.register_craft({
 	replacements = {{"farming:pepper_ground", "vessels:glass_bottle"}},
 })
 
+minetest.register_craft({
+	output = "ts_police:truncheon",
+	recipe = {
+		{ "", "", "techage:ta4_carbon_fiber" },
+		{ "", "techage:ta4_carbon_fiber", "" },
+		{ "techage:ta4_carbon_fiber", "", "" },
+	},
+})
+
 local craft_function = function(itemstack, player, old_craft_grid, craft_inv)
 	local itemname = itemstack:get_name()
 	if itemname == "ts_skins:clothing_jacket_police"
