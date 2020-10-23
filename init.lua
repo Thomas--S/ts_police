@@ -277,6 +277,18 @@ minetest.register_craft({
 	},
 })
 
+if techage then
+	-- A version check is omitted on purpose to prevent unauthorized crafting or restricted items.
+	techage.register_uncraftable_items("ts_skins:clothing_jacket_police")
+	techage.register_uncraftable_items("ts_skins:clothing_cap_police")
+	techage.register_uncraftable_items("ts_skins:clothing_trousers_police")
+	techage.register_uncraftable_items("ts_police:shield")
+	techage.register_uncraftable_items("ts_police:helmet")
+	techage.register_uncraftable_items("ts_police:chestplate")
+	techage.register_uncraftable_items("ts_police:leggings")
+	techage.register_uncraftable_items("ts_police:boots")
+end
+
 local craft_function = function(itemstack, player, old_craft_grid, craft_inv)
 	local itemname = itemstack:get_name()
 	if itemname == "ts_skins:clothing_jacket_police"
