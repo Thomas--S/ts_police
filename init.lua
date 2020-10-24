@@ -13,7 +13,7 @@ local function is_allowed(player, pos)
 end
 
 ts_skins.register_clothing("jacket_police", {
-	type = "jacket",
+	type = "coat", -- "coat" is used as type so it is below the belt.
 	description = "Server Police Jacket",
 	skin = "ts_police_jacket.png",
 	inventory_image = "ts_police_jacket_inv.png",
